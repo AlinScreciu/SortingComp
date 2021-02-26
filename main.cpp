@@ -3,6 +3,7 @@
 #include <iostream> 
 #include<vector>
 #include <fstream>
+#include <string>
 using namespace std;
 using namespace std::chrono;
 
@@ -97,10 +98,9 @@ void quickSort(int arr[], int low, int high) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
 }
 void bubbleSort(int arr[], int n)  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-{
+{ 
     int i, j;
     for (i = 0; i < n - 1; i++)
-
         for (j = 0; j < n - i - 1; j++)
             if (arr[j] > arr[j + 1])
                 swap(&arr[j], &arr[j + 1]);
@@ -123,16 +123,29 @@ void insertionSort(int arr[], int n) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 int main()
 {
-    ifstream file("Dataset/smallList.txt");
-    vector<float> v;
-    float a;
-    while (file >> a) {
-        v.push_back(a);
+
+    vector<int> v;
+    int a;
+    string files[5] = { "Dataset/BigList.txt",
+    "Dataset/GinormousList.txt",
+    "Dataset/MediumList.txt",
+    "Dataset/SmallIntSmallList.txt",
+    "Dataset/smallList.txt" };
+    for (int i = 0; i < 5; i++) {
+        vector<int> v;
+        ifstream temp(files[i]);
+        float a;
+        while (temp >> a) {
+            v.push_back(a);
+        }
+        auto start1 = high_resolution_clock::now();
+        quickSort(&v[0], 0, v.size() - 1);
+        auto stop1 = high_resolution_clock::now();
+        auto duration1 = duration_cast<microseconds>(stop1 - start1);
+        cout << "Quick sort took " << duration1.count() / 1000000.0 << " seconds to sort" << files[i]<<"\n\n\n";
     }
-    for (int i = 0; i < v.size(); i++) {
-        cout << v[i]<<"\n";
-    }
-    /*vector<int> values(55000);
+    /* choose sorts and on what sets and if you want to avg results from more runs*/
+/*vector<int> values(55000);
     vector<int> copyV(55000);
     auto f = []() -> int { return rand() % 100000; };
     static const int ITER = 100;
