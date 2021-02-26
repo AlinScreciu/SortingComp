@@ -13,7 +13,7 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Dataset">
+    <Filter Include="Source Files\dataset">
       <UniqueIdentifier>{cfc766d2-63a4-41b0-9205-8fc12de11ada}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -23,20 +23,62 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="D:\actual_Coding\dataset\BigList.txt">
-      <Filter>Source Files\Dataset</Filter>
+    <Text Include="dataset\almostSortedBigList.txt">
+      <Filter>Source Files\dataset</Filter>
     </Text>
-    <Text Include="D:\actual_Coding\dataset\GinormousList.txt">
-      <Filter>Source Files\Dataset</Filter>
+    <Text Include="dataset\almostSortedMediumList.txt">
+      <Filter>Source Files\dataset</Filter>
     </Text>
-    <Text Include="D:\actual_Coding\dataset\MediumList.txt">
-      <Filter>Source Files\Dataset</Filter>
+    <Text Include="dataset\almostSortedSmallList.txt">
+      <Filter>Source Files\dataset</Filter>
     </Text>
-    <Text Include="D:\actual_Coding\dataset\SmallIntSmallList.txt">
-      <Filter>Source Files\Dataset</Filter>
+    <Text Include="dataset\halfSortedBigList.txt">
+      <Filter>Source Files\dataset</Filter>
     </Text>
-    <Text Include="D:\actual_Coding\dataset\smallList.txt">
-      <Filter>Source Files\Dataset</Filter>
+    <Text Include="dataset\halfSortedMediumList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\halfSortedSmallList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\invertedSortedBigList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\invertedSortedMediumList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\invertedSortedSmallList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\pureRandomGinormousList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\randomBigList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\randomMediumList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\randomSmallList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\smallFloatsBigList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\smallIntsBigList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\sortedBigList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\sortedMediumList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\sortedSmallList.txt">
+      <Filter>Source Files\dataset</Filter>
+    </Text>
+    <Text Include="dataset\WARNINGRequiresThreadripperList.txt">
+      <Filter>Source Files\dataset</Filter>
     </Text>
   </ItemGroup>
 </Project>

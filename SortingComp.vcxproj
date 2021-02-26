@@ -142,11 +142,25 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="D:\actual_Coding\dataset\BigList.txt" />
-    <Text Include="D:\actual_Coding\dataset\GinormousList.txt" />
-    <Text Include="D:\actual_Coding\dataset\MediumList.txt" />
-    <Text Include="D:\actual_Coding\dataset\SmallIntSmallList.txt" />
-    <Text Include="D:\actual_Coding\dataset\smallList.txt" />
+    <Text Include="dataset\almostSortedBigList.txt" />
+    <Text Include="dataset\almostSortedMediumList.txt" />
+    <Text Include="dataset\almostSortedSmallList.txt" />
+    <Text Include="dataset\halfSortedBigList.txt" />
+    <Text Include="dataset\halfSortedMediumList.txt" />
+    <Text Include="dataset\halfSortedSmallList.txt" />
+    <Text Include="dataset\invertedSortedBigList.txt" />
+    <Text Include="dataset\invertedSortedMediumList.txt" />
+    <Text Include="dataset\invertedSortedSmallList.txt" />
+    <Text Include="dataset\pureRandomGinormousList.txt" />
+    <Text Include="dataset\randomBigList.txt" />
+    <Text Include="dataset\randomMediumList.txt" />
+    <Text Include="dataset\randomSmallList.txt" />
+    <Text Include="dataset\smallFloatsBigList.txt" />
+    <Text Include="dataset\smallIntsBigList.txt" />
+    <Text Include="dataset\sortedBigList.txt" />
+    <Text Include="dataset\sortedMediumList.txt" />
+    <Text Include="dataset\sortedSmallList.txt" />
+    <Text Include="dataset\WARNINGRequiresThreadripperList.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
