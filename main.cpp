@@ -123,7 +123,7 @@ void insertionSort(int arr[], int n) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 int main()
 {
-    ifstream file("smallList.txt");
+    ifstream file("Dataset/smallList.txt");
     vector<float> v;
     float a;
     while (file >> a) {
