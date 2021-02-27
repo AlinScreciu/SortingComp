@@ -6,13 +6,11 @@
 #include <string>
 using namespace std;
 using namespace std::chrono;
-
 void swap(float* a, float* b)
 {
 	float t = *a;
 	*a = *b;
 	*b = t;
-	//cout << *a <<" "<< *b << "\n";
 }
 int partition(float arr[], int low, int high)
 {
@@ -80,14 +78,14 @@ void mergeSort(float arr[], int l, int r) {
 	mergeSort(arr, m + 1, r);
 	merge(arr, l, m, r);
 }
-void quickSort(float arr[], float low, float high) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+void quickSort(float arr[], int low, int high) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 {
 	if (low < high)
 	{
-		float pi = partition(arr, low, high);
+		int pi = partition(arr, low, high);
 
-		quickSort(arr, low, pi - 1.0);
-		quickSort(arr, pi + 1.0, high);
+		quickSort(arr, low, pi - 1);
+		quickSort(arr, pi + 1, high);
 	}
 }
 void bubbleSort(float arr[], int n)  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -115,19 +113,58 @@ void insertionSort(float arr[], int n) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		arr[j + 1] = key;
 	}
 }
-int main()
-{
+void ts(int i) {
 	vector<float> v;
-	ifstream test("dataset/smallIntsBigList.txt");
+	string files[2] = { "dataset/smallIntsBigList.txt","dataset/randomBigList.txt" };
+	ifstream test(files[i]);
 	ofstream check("dataset/checkBIg.txt");
 	float a;
 	while (test >> a) { v.push_back(a); }
+	vector<float> copy = v;
 	auto st = high_resolution_clock::now();
-	mergeSort(&v[0],0,v.size() - 1);
+	mergeSort(&v[0], 0, v.size() - 1);
 	auto ft = high_resolution_clock::now();
 	auto d = duration_cast<microseconds>(ft - st);
-	cout<<fixed<< d.count()/1000000.0<<" s";
-	for (int i = 0; i < v.size(); i++) {
-		check << v[i]<<"\n";
+	cout << fixed << d.count() / 1000000.0 << "s merge\n";
+	v = copy;
+	auto st1 = high_resolution_clock::now();
+	quickSort(&v[0], 0, v.size() - 1);
+	auto ft1 = high_resolution_clock::now();
+	auto d1 = duration_cast<microseconds>(ft1 - st1);
+	cout << fixed << d1.count() / 1000000.0 << "s qck\n";
+	v = copy;
 	}
+
+int main()
+{
+	int s;
+	bool checks[5];
+	bool k1 = false, k2 = false;
+	cout << "Choose  what kind of data the alg should be compared over:\n1.Almost sorted data.\n2.Random data.\n";
+	cin >> s;
+	while (s != 3) {
+		if (k1 && (s == 1) || k2 && (s == 2)) {
+			cout << "Already added, enter a diff one or enter 3 to continue!\n";
+			cin >> s;
+		}
+		else {
+			switch (s) {
+			case 1:
+				k1 = true;
+				break;
+			case 2:
+				k2 = true;
+				break;
+			}
+			if (k1 && k2) break;
+			cout << "To add more one more data type enter the corresponding number, to continue enter 3.\n";
+			cin >> s;
+		}
+	}
+	checks[0] = k1;
+	checks[1] = k2;
+	for (int i = 0; i < 5; i++) {
+		if (checks[i]) tQS(i);
+	}
+	
 }
