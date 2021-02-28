@@ -135,6 +135,27 @@ void heapSort(float arr[], int n)
 		heapify(arr, i, 0);
 	}
 }
+void countSort(vector<float> &arr)
+{
+	float max = *max_element(arr.begin(), arr.end());
+	float min = *min_element(arr.begin(), arr.end());
+	int range = max - min + 1;
+
+	vector<float> count(range), output(arr.size());
+	for (int i = 0; i < arr.size(); i++)
+		count[arr[i] - min]++;
+
+	for (int i = 1; i < count.size(); i++)
+		count[i] += count[i - 1];
+
+	for (int i = arr.size() - 1; i >= 0; i--) {
+		output[count[arr[i] - min] - 1] = arr[i];
+		count[arr[i] - min]--;
+	}
+
+	for (int i = 0; i < arr.size(); i++)
+		arr[i] = output[i];
+}
 void ts(int i) {
 	string smb[3] = { "Small size","Medium size","Big size" };
 	int checker = 3;
@@ -220,10 +241,23 @@ void ts(int i) {
 		cout << "----------------------------------------------------------------\n";
 		v = copy;
 	}
+	for (int j = 0; j < checker; j++) {
+		ifstream test("dataset/" + files[i][j] + ".txt");
+		float a;
+		while (test >> a) { v.push_back(a); }
+		auto st1 = high_resolution_clock::now();
+		countSort(v);
+		auto ft1 = high_resolution_clock::now();
+		auto d1 = duration_cast<microseconds>(ft1 - st1);
+		/*if (j == 0) cout << files[i][checker] << "\n";*/
+		if (checker == 3) cout << fixed << "count: " << d1.count() / 1000000.0 << "s for " << smb[j] << endl;
+		else cout << fixed << "count: " << d1.count() / 1000000.0 << "s for " << files[i][j] << endl;
+		cout << "----------------------------------------------------------------\n";
+		v = copy;
+	}
 	cout << "\n\n";
 	
 	}
-
 int main()
 	{
 		int s,safe=1;
