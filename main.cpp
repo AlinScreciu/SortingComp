@@ -167,7 +167,7 @@ void ts(int i) {
 	,{"invertedSortedSmallList","invertedSortedMediumList","invertedSortedBigList","Reverse Sorted" } // reverse sorted 4
 	,{"sortedSmallList","sortedMediumList","sortedBigList","Sorted" } // sorted 5
 	,{"smallFloatsBigList","smallIntsBigList","Small numbers"}  // small numbers 6
-	, { "WARNINGRequiresThreadripperList","pureRandomGinormousList","Big lists" } }; // big 7
+	, { "pureRandomGinormousList","WARNINGRequiresThreadripperList","Big lists" } }; // big 7
 
 	if (i == 6 || i == 5) checker = 2;
 	vector<float> copy = v;
